@@ -1,0 +1,22 @@
+#!/usr/bin/perl -w
+use GD;
+
+my $img = new GD::Image("6x8.png") or die;
+for my $cy (4..31)
+{
+    for my $y (0..7)
+    {
+        for my $cx (0..7)
+        {
+            print ' "';
+            my $c = $cy*8+$cx;
+            for my $x (0..5)
+            {
+                print $img->getPixel($c*6+$x, $y) ? "*":".";
+            }
+            print '"';
+        }
+        print "\n";
+    }
+    print "\n";
+}
