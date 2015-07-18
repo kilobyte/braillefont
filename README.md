@@ -11,8 +11,9 @@ Whether it is readable strongly depends on font used by your reader.  Most fonts
 some introduce unsightly gaps at character boundaries, unfortunately some (like Dejavu Mono Sans) try to render
 "off" pixels which makes things hard to read with a large font size and utterly unreadable with a small font.
 
-Various clients with default settings on Debian:
-* xterm: good
-* rxvt: good
-* xfce-terminal (and others using libvte): bad but somewhat readable
-* osso-xterm (libvte): good
+The results are:
+* most fonts: good
+* Dejavu, large size: somewhat hard to read
+* Dejavu, small size: useless, utterly illegible
+
+The problem is, Dejavu is the default for some terminals on some distributions: xfce-terminal, gnome-terminal on Debian (but not Ubuntu).  Other terminals, like xterm or rxvt look fine.
