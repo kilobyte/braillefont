@@ -4,8 +4,8 @@ Individual characters use a grid of 6x8 (5x7 usable) "pixels" which are rendered
 
 The result:
 
-⡇⠀⠀⡠⠤⡀⣄⠤⡀⡠⠤⡀⡠⡠⡀⠀⠀⠀⠠⡅⠀⡤⠤⡀⡠⠤⠄⡄⠀⡄⡠⡠⡀
-⠧⠤⠄⠣⠤⠃⠇⠀⠀⠫⠭⠁⠇⠁⠇⠀⠀⠀⠀⠣⠀⡗⠒⠁⠬⠭⠂⠣⠤⠃⠇⠁⠇
+    ⡇⠀⠀⡠⠤⡀⣄⠤⡀⡠⠤⡀⡠⡠⡀⠀⠀⠀⠠⡅⠀⡤⠤⡀⡠⠤⠄⡄⠀⡄⡠⡠⡀
+    ⠧⠤⠄⠣⠤⠃⠇⠀⠀⠫⠭⠁⠇⠁⠇⠀⠀⠀⠀⠣⠀⡗⠒⠁⠬⠭⠂⠣⠤⠃⠇⠁⠇
 
 Whether it is readable strongly depends on font used by your reader.  Most fonts produce a nice well-aligned grid,
 some introduce unsightly gaps at character boundaries, unfortunately some (like Dejavu Mono Sans) try to render
