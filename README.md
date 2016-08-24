@@ -7,13 +7,13 @@ The result:
     ⡇⠀⠀⡠⠤⡀⣄⠤⡀⡠⠤⡀⡠⡠⡀⠀⠀⠀⠠⡅⠀⡤⠤⡀⡠⠤⠄⡄⠀⡄⡠⡠⡀
     ⠧⠤⠄⠣⠤⠃⠇⠀⠀⠫⠭⠁⠇⠁⠇⠀⠀⠀⠀⠣⠀⡗⠒⠁⠬⠭⠂⠣⠤⠃⠇⠁⠇
 
-Whether it is readable strongly depends on font used by your reader.  Most fonts produce a nice well-aligned grid,
-some introduce unsightly gaps at character boundaries, unfortunately some (like Dejavu Mono Sans) try to render
-"off" pixels which makes things hard to read with a large font size and utterly unreadable with a small font.
+Whether it is readable strongly depends on font used by your reader.  Most
+fonts produce a nice well-aligned grid, some introduce unsightly gaps at
+character boundaries, unfortunately one (FreeFont Mono) follows the Unicode
+specification by rendering "off" pixels, which makes it completely
+unreadable at font sizes usually used for terminals.  This applies to
+legitimate uses of Braille, not just this abuse.  A fix for FreeFont is
+available but hasn't been released yet.
 
-The results are:
-* most fonts: good
-* Dejavu, large size: somewhat hard to read
-* Dejavu, small size: useless, utterly illegible
-
-The problem is, Dejavu is the default for some terminals on some distributions: xfce-terminal, gnome-terminal on Debian (but not Ubuntu).  Other terminals, like xterm or rxvt look fine.
+The problem is, Freefont is installed by default on most distributions, and
+in many cases it gets chosen as fallback for Braille glyphs.
