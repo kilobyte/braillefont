@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <wchar.h>
+#include <locale.h>
 
 const char *font =
 #include "6x8font.h"
@@ -7,7 +9,7 @@ const char *font =
 #define L (8*6)
 #define R (L*8)
 
-static void phalf(char c, int offset)
+static void phalf(unsigned char c, int offset)
 {
     for (int x = 0; x < 3; x++)
     {
@@ -29,14 +31,18 @@ static void phalf(char c, int offset)
 
 int main()
 {
-    char buf[1024];
-    while (fgets(buf, sizeof(buf), stdin))
+    wchar_t buf[1024];
+    setlocale(LC_CTYPE, "");
+
+    while (fgetws(buf, sizeof(buf), stdin))
     {
-        const char *b;
+        const wchar_t *b;
         for (b=buf; *b; b++)
         {
             if (*b < 32)
                 printf("%c", *b);
+            else if (*b > 255)
+                phalf(127, 0);
             else
                 phalf(*b, 0);
         }
@@ -44,6 +50,8 @@ int main()
         {
             if (*b < 32)
                 printf("%c", *b);
+            else if (*b > 255)
+                phalf(127, 4*L);
             else
                 phalf(*b, 4*L);
         }
