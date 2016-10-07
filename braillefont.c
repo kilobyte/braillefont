@@ -29,6 +29,24 @@ static void phalf(unsigned char c, int offset)
     }
 }
 
+static short win1252[32]=
+{
+    0x20ac,     -1, 0x201a, 0x0192, 0x201e, 0x2026, 0x2020, 0x2021,
+    0x02c6, 0x2030, 0x0160, 0x2039, 0x0152,     -1, 0x017d,     -1,
+        -1, 0x2018, 0x2019, 0x201c, 0x201d, 0x2022, 0x2013, 0x2014,
+    0x02dc, 0x2122, 0x0161, 0x203a, 0x0153,     -1, 0x017e, 0x0178,
+};
+
+static wchar_t map_character(wchar_t c)
+{
+    if (c < 256)
+        return c;
+    for (int i=0; i<32; i++)
+        if (c==win1252[i])
+            return 128+i;
+    return 127;
+}
+
 int main()
 {
     wchar_t buf[1024];
@@ -41,19 +59,15 @@ int main()
         {
             if (*b < 32)
                 printf("%c", *b);
-            else if (*b > 255)
-                phalf(127, 0);
             else
-                phalf(*b, 0);
+                phalf(map_character(*b), 0);
         }
         for (b=buf; *b; b++)
         {
             if (*b < 32)
                 printf("%c", *b);
-            else if (*b > 255)
-                phalf(127, 4*L);
             else
-                phalf(*b, 4*L);
+                phalf(map_character(*b), 4*L);
         }
     }
 
