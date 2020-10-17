@@ -1,0 +1,14 @@
+.TH braillefont 6
+.SH NAME
+\fBbraillefont\fP \- Print text using unicode braille characters
+.SH SYNOPSIS
+\fBbraillefont\fP
+.SH DESCRIPTION
+\fBbraillefont\fP runs interactively on the console and will convert a given text to a bitmapped version
+using the Braille range of Unicode.
+Individual characters use a grid of 6x8 (5x7 usable) "pixels" which are rendered by 3x2 blocks of Unicode characters.
+.SH CAVEATS
+For given text only printable ASCII and a limited number of other characters are supported.
+
+.SH AUTHOR
+\fBbraillefont\fP was written by Adam Borowski <kilobyte AT angband.pl>.
