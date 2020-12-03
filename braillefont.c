@@ -52,7 +52,7 @@ int main()
     wchar_t buf[1024];
     setlocale(LC_CTYPE, "");
 
-    while (fgetws(buf, sizeof(buf), stdin))
+    while (fgetws(buf, sizeof(buf)/sizeof(wchar_t), stdin))
     {
         const wchar_t *b;
         for (b=buf; *b; b++)
