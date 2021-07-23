@@ -62,12 +62,18 @@ int main()
             else
                 phalf(map_character(*b), 0);
         }
+        if(feof(stdin)) {
+            printf("\n");
+        }
         for (b=buf; *b; b++)
         {
             if (*b < 32)
                 printf("%c", *b);
             else
                 phalf(map_character(*b), 4*L);
+        }
+        if(feof(stdin)) {
+            printf("\n");
         }
     }
 
